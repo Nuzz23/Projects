@@ -49,8 +49,6 @@ print(somma)
 
 # Function to check if the "X-MAS" shape exists with center (i, j)
 def count_XMAS(data: np.ndarray, i: int, j: int) -> int:
-    somma = 0
-    
     try:
         if  (data[i-1, j-1] == data[i-1, j+1] == 'M' and data[i+1, j-1] == data[i+1, j+1] == 'S') or \
             (data[i-1, j-1] == data[i+1, j-1] == 'M' and data[i-1, j+1] == data[i+1, j+1] == 'S' ) or \
@@ -58,9 +56,7 @@ def count_XMAS(data: np.ndarray, i: int, j: int) -> int:
             (data[i+1, j+1] == data[i-1, j+1] == 'M' and data[i-1, j-1] == data[i+1, j-1] == 'S' ):
             return 1    
     except IndexError:
-        pass
-    
-    return somma
+        return 0
 
 # Iterate through the grid and count all X-MAS shapes
 somma = 0
